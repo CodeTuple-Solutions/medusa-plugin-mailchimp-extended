@@ -9,9 +9,9 @@ export async function add(req: Request, res: Response) {
       req.body.data || {}
     );
 
-    res.status(200).send("Email sent successfully");
+    res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
-    res.status(500).send("Error: " + error.message);
+    res.status(400).json({ error: error.message });
   }
 }
 
@@ -24,8 +24,8 @@ export async function update(req: Request, res: Response) {
       req.body.data || {}
     );
 
-    res.status(200).send("Email sent successfully");
+    res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
-    res.status(500).send("Error: " + error.message);
+    res.status(400).json({ error: error.message });
   }
 }
